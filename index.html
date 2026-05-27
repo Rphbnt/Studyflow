@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>STUDYFLOW</title>
+<title>LUCID AI</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
 <style>
 
@@ -15,58 +15,57 @@
     margin:0;
     padding:0;
     box-sizing:border-box;
-    font-family:'Poppins',sans-serif;
+    font-family:'Inter',sans-serif;
 }
 
 body{
-    background:#050816;
+    background:#060816;
     color:white;
     overflow-x:hidden;
     min-height:100vh;
 }
 
-/* ================= BACKGROUND ================= */
+/* BACKGROUND */
 
 .bg{
     position:fixed;
     inset:0;
     background:
-    radial-gradient(circle at top left,#4f46e530,transparent 30%),
-    radial-gradient(circle at bottom right,#7c3aed30,transparent 30%),
-    #050816;
+    radial-gradient(circle at top left,#4f46e530,transparent 25%),
+    radial-gradient(circle at bottom right,#06b6d430,transparent 25%),
+    #060816;
     z-index:-3;
 }
 
-.stars{
+.grid-bg{
     position:fixed;
     inset:0;
     background-image:
-    radial-gradient(white 1px, transparent 1px);
+    linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
     background-size:40px 40px;
-    opacity:0.08;
     z-index:-2;
 }
 
-.blur{
+.glow{
     position:fixed;
-    width:300px;
-    height:300px;
+    width:350px;
+    height:350px;
     border-radius:50%;
-    filter:blur(100px);
-    opacity:.4;
-    z-index:-1;
+    filter:blur(120px);
+    opacity:.35;
     animation:float 8s infinite alternate ease-in-out;
 }
 
-.blur1{
-    background:#4f46e5;
-    top:10%;
+.glow1{
+    background:#7c3aed;
+    top:5%;
     left:5%;
 }
 
-.blur2{
-    background:#7c3aed;
-    bottom:10%;
+.glow2{
+    background:#06b6d4;
+    bottom:5%;
     right:5%;
 }
 
@@ -75,65 +74,71 @@ body{
         transform:translateY(0px);
     }
     to{
-        transform:translateY(-30px);
+        transform:translateY(-35px);
     }
 }
 
-/* ================= HEADER ================= */
+/* HEADER */
 
 header{
-    width:100%;
-    padding:25px;
     display:flex;
     justify-content:space-between;
     align-items:center;
+    padding:25px;
 }
 
 .logo{
-    font-size:32px;
+    font-size:34px;
     font-weight:800;
-    background:linear-gradient(90deg,#7c3aed,#4f46e5);
+    background:linear-gradient(90deg,#7c3aed,#06b6d4);
     -webkit-background-clip:text;
     -webkit-text-fill-color:transparent;
 }
 
-.top-info{
+.topbar{
     display:flex;
-    gap:20px;
+    gap:15px;
     align-items:center;
 }
 
-.clock,
-.date{
+.clock{
     color:#d1d5db;
-    font-size:15px;
 }
 
-/* ================= HERO ================= */
+.status{
+    background:#111827;
+    padding:10px 15px;
+    border-radius:999px;
+    font-size:14px;
+    border:1px solid rgba(255,255,255,0.05);
+}
+
+/* HERO */
 
 .hero{
+    padding:50px 25px;
     text-align:center;
-    padding:40px 20px;
 }
 
 .hero h1{
-    font-size:65px;
+    font-size:72px;
     line-height:1;
-    margin-bottom:20px;
+    margin-bottom:25px;
+    font-weight:800;
 }
 
 .hero span{
-    background:linear-gradient(90deg,#7c3aed,#4f46e5);
+    background:linear-gradient(90deg,#7c3aed,#06b6d4);
     -webkit-background-clip:text;
     -webkit-text-fill-color:transparent;
 }
 
 .hero p{
-    max-width:650px;
+    max-width:750px;
     margin:auto;
-    color:#b5b5c3;
-    line-height:1.7;
-    margin-bottom:30px;
+    color:#b4b7c5;
+    line-height:1.8;
+    margin-bottom:35px;
 }
 
 .hero-buttons{
@@ -144,18 +149,17 @@ header{
 }
 
 .btn{
+    padding:16px 28px;
     border:none;
-    padding:15px 30px;
-    border-radius:15px;
-    color:white;
-    font-size:15px;
-    font-weight:600;
+    border-radius:16px;
     cursor:pointer;
+    color:white;
+    font-weight:600;
     transition:.3s;
 }
 
 .primary{
-    background:linear-gradient(90deg,#7c3aed,#4f46e5);
+    background:linear-gradient(90deg,#7c3aed,#06b6d4);
 }
 
 .secondary{
@@ -163,69 +167,89 @@ header{
 }
 
 .btn:hover{
-    transform:translateY(-3px);
+    transform:translateY(-4px);
 }
 
-/* ================= GRID ================= */
+/* GRID */
 
-.grid{
+.dashboard{
     display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+    grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
     gap:20px;
-    padding:30px;
+    padding:25px;
 }
 
-/* ================= CARD ================= */
+/* CARD */
 
 .card{
     background:rgba(255,255,255,0.05);
-    border:1px solid rgba(255,255,255,0.08);
-    border-radius:25px;
-    padding:25px;
-    backdrop-filter:blur(10px);
-    box-shadow:0 10px 30px rgba(0,0,0,0.2);
+    border:1px solid rgba(255,255,255,0.06);
+    border-radius:26px;
+    padding:24px;
+    backdrop-filter:blur(12px);
     transition:.3s;
 }
 
 .card:hover{
-    transform:translateY(-5px);
+    transform:translateY(-6px);
 }
 
 .card h2{
-    margin-bottom:20px;
+    margin-bottom:18px;
     font-size:22px;
 }
 
-/* ================= TASKS ================= */
+/* INPUTS */
 
-.todo-input{
+textarea,
+input{
     width:100%;
-    padding:14px;
+    background:#0f172a;
     border:none;
-    border-radius:12px;
     outline:none;
-    background:#111827;
     color:white;
+    padding:16px;
+    border-radius:15px;
     margin-bottom:15px;
+    resize:none;
 }
 
-.todo-btn{
+textarea{
+    min-height:160px;
+}
+
+/* BUTTONS */
+
+.action-btn{
     width:100%;
-    padding:14px;
+    padding:15px;
     border:none;
-    border-radius:12px;
-    background:#4f46e5;
+    border-radius:15px;
+    background:linear-gradient(90deg,#7c3aed,#06b6d4);
     color:white;
-    font-weight:600;
     cursor:pointer;
+    font-weight:700;
     margin-bottom:15px;
 }
 
-.todo-list li{
-    list-style:none;
-    background:#111827;
-    padding:12px;
-    border-radius:12px;
+/* OUTPUT */
+
+.output{
+    background:#0f172a;
+    padding:18px;
+    border-radius:16px;
+    line-height:1.7;
+    color:#d1d5db;
+    min-height:120px;
+    white-space:pre-wrap;
+}
+
+/* TASKS */
+
+.task{
+    background:#0f172a;
+    padding:14px;
+    border-radius:14px;
     margin-bottom:10px;
     display:flex;
     justify-content:space-between;
@@ -236,97 +260,50 @@ header{
     cursor:pointer;
 }
 
-/* ================= TIMER ================= */
-
-.timer{
-    text-align:center;
-}
+/* TIMER */
 
 .timer-display{
-    font-size:70px;
-    font-weight:700;
+    font-size:60px;
+    text-align:center;
+    font-weight:800;
     margin:20px 0;
 }
 
 .timer-controls{
     display:flex;
     gap:10px;
-    justify-content:center;
-    flex-wrap:wrap;
 }
 
 .timer-controls button{
-    padding:12px 18px;
-    border:none;
-    border-radius:12px;
-    cursor:pointer;
-    background:#7c3aed;
-    color:white;
-    font-weight:600;
-}
-
-/* ================= QUOTE ================= */
-
-.quote{
-    line-height:1.8;
-    color:#d1d5db;
-    font-size:17px;
-}
-
-/* ================= MUSIC ================= */
-
-.music-buttons{
-    display:flex;
-    flex-wrap:wrap;
-    gap:10px;
-}
-
-.music-buttons button{
     flex:1;
-    padding:12px;
+    padding:14px;
     border:none;
-    border-radius:12px;
+    border-radius:14px;
+    cursor:pointer;
     background:#111827;
     color:white;
-    cursor:pointer;
 }
 
-/* ================= STATS ================= */
+/* STATS */
 
 .stats{
     display:flex;
-    justify-content:space-between;
     gap:15px;
 }
 
-.stat-box{
+.stat{
     flex:1;
-    background:#111827;
-    padding:20px;
+    background:#0f172a;
     border-radius:18px;
+    padding:18px;
     text-align:center;
 }
 
-.stat-box h3{
-    font-size:30px;
-    margin-bottom:5px;
+.stat h3{
+    font-size:34px;
 }
 
-/* ================= NOTES ================= */
-
-.notes{
-    width:100%;
-    height:180px;
-    background:#111827;
-    border:none;
-    border-radius:15px;
-    padding:15px;
-    resize:none;
-    color:white;
-    outline:none;
-}
-
-/* ================= FOOTER ================= */
+/* FOOTER */
 
 footer{
     text-align:center;
@@ -334,43 +311,46 @@ footer{
     color:#777;
 }
 
-/* ================= MOBILE ================= */
+/* MOBILE */
 
 @media(max-width:768px){
 
 .hero h1{
-    font-size:42px;
+    font-size:46px;
 }
 
 .timer-display{
-    font-size:50px;
+    font-size:46px;
 }
 
 header{
     flex-direction:column;
-    gap:10px;
+    gap:15px;
 }
 
 }
 
 </style>
 </head>
+
 <body>
 
 <div class="bg"></div>
-<div class="stars"></div>
-<div class="blur blur1"></div>
-<div class="blur blur2"></div>
+<div class="grid-bg"></div>
+<div class="glow glow1"></div>
+<div class="glow glow2"></div>
 
 <header>
 
 <div class="logo">
-STUDYFLOW
+LUCID AI
 </div>
 
-<div class="top-info">
+<div class="topbar">
 <div class="clock" id="clock">00:00</div>
-<div class="date" id="date">---</div>
+<div class="status">
+AI ONLINE
+</div>
 </div>
 
 </header>
@@ -378,68 +358,94 @@ STUDYFLOW
 <section class="hero">
 
 <h1>
-Become <span>Impossible</span><br>
-To Ignore.
+Your Second <span>Brain</span>.
 </h1>
 
 <p>
-Le dashboard étudiant ultime pour rester concentré,
-organisé et motivé tous les jours.
+LUCID transforme tes pensées, captures d’écran,
+devoirs et idées en une organisation intelligente.
+Un cerveau externe futuriste qui pense avec toi.
 </p>
 
 <div class="hero-buttons">
 
-<button class="btn primary">
-START FOCUSING
+<button class="btn primary"
+onclick="scrollDashboard()">
+OPEN LUCID
 </button>
 
-<button class="btn secondary" onclick="scrollToGrid()">
-OPEN DASHBOARD
+<button class="btn secondary">
+AI ASSISTANT ACTIVE
 </button>
 
 </div>
 
 </section>
 
-<section class="grid" id="dashboard">
+<section class="dashboard" id="dashboard">
+
+<!-- AI BRAIN DUMP -->
+
+<div class="card">
+
+<h2>🧠 Brain Dump AI</h2>
+
+<textarea
+id="brainInput"
+placeholder="Exemple :
+
+Faire les maths
+Contrôle vendredi
+Monter la vidéo
+Acheter un câble
+Réviser SVT"
+></textarea>
+
+<button
+class="action-btn"
+onclick="organizeBrain()">
+Organiser automatiquement
+</button>
+
+<div
+class="output"
+id="brainOutput">
+L’IA organisera tes pensées ici...
+</div>
+
+</div>
 
 <!-- TASKS -->
 
 <div class="card">
 
-<h2>📚 Tasks</h2>
+<h2>📚 Smart Tasks</h2>
 
 <input
 type="text"
-id="todoInput"
-class="todo-input"
+id="taskInput"
 placeholder="Ajouter une tâche..."
 >
 
 <button
-class="todo-btn"
-onclick="addTask()"
->
-Ajouter
+class="action-btn"
+onclick="addTask()">
+Ajouter tâche
 </button>
 
-<ul
-class="todo-list"
-id="todoList"
-></ul>
+<div id="taskList"></div>
 
 </div>
 
-<!-- TIMER -->
+<!-- FOCUS TIMER -->
 
-<div class="card timer">
+<div class="card">
 
-<h2>⏳ Focus Timer</h2>
+<h2>⏳ Focus Mode</h2>
 
 <div
 class="timer-display"
-id="timer"
->
+id="timer">
 25:00
 </div>
 
@@ -461,67 +467,27 @@ Reset
 
 </div>
 
-<!-- MOTIVATION -->
+<!-- AI SUMMARY -->
 
 <div class="card">
 
-<h2>🎯 Motivation</h2>
+<h2>📄 AI Summary</h2>
+
+<textarea
+id="summaryInput"
+placeholder="Colle un long texte ici..."
+></textarea>
+
+<button
+class="action-btn"
+onclick="summarizeText()">
+Résumer
+</button>
 
 <div
-class="quote"
-id="quote"
->
-“Small progress is still progress.”
-</div>
-
-</div>
-
-<!-- MUSIC -->
-
-<div class="card">
-
-<h2>🌧 Ambiance</h2>
-
-<div class="music-buttons">
-
-<button onclick="playSound(rain)">
-Rain
-</button>
-
-<button onclick="playSound(lofi)">
-Lo-Fi
-</button>
-
-<button onclick="playSound(cafe)">
-Café
-</button>
-
-<button onclick="stopSounds()">
-Stop
-</button>
-
-</div>
-
-</div>
-
-<!-- STATS -->
-
-<div class="card">
-
-<h2>🔥 Stats</h2>
-
-<div class="stats">
-
-<div class="stat-box">
-<h3 id="tasksCount">0</h3>
-<p>Tâches</p>
-</div>
-
-<div class="stat-box">
-<h3 id="focusCount">0</h3>
-<p>Focus</p>
-</div>
-
+class="output"
+id="summaryOutput">
+Le résumé apparaîtra ici...
 </div>
 
 </div>
@@ -530,59 +496,59 @@ Stop
 
 <div class="card">
 
-<h2>📝 Quick Notes</h2>
+<h2>📝 Smart Notes</h2>
 
 <textarea
-class="notes"
-placeholder="Écris ici..."
 id="notes"
+placeholder="Tes notes seront sauvegardées automatiquement..."
 ></textarea>
+
+</div>
+
+<!-- STATS -->
+
+<div class="card">
+
+<h2>🔥 Productivity</h2>
+
+<div class="stats">
+
+<div class="stat">
+<h3 id="taskCount">0</h3>
+<p>Tâches</p>
+</div>
+
+<div class="stat">
+<h3 id="focusCount">0</h3>
+<p>Focus</p>
+</div>
+
+</div>
 
 </div>
 
 </section>
 
 <footer>
-STUDYFLOW © 2026
+LUCID AI © 2026
 </footer>
-
-<!-- AUDIO -->
-
-<audio id="rain" loop>
-<source src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_c8c8e4f4a5.mp3?filename=rain-ambient-110397.mp3">
-</audio>
-
-<audio id="lofi" loop>
-<source src="https://cdn.pixabay.com/download/audio/2022/10/25/audio_946e0b7d9b.mp3?filename=lofi-study-112191.mp3">
-</audio>
-
-<audio id="cafe" loop>
-<source src="https://cdn.pixabay.com/download/audio/2023/05/31/audio_0f9dd2f7f6.mp3?filename=coffee-shop-ambience-147118.mp3">
-</audio>
 
 <script>
 
-/* ================= CLOCK ================= */
+/* CLOCK */
 
 function updateClock(){
 
 const now = new Date();
 
-let hours =
+let h =
 now.getHours().toString().padStart(2,'0');
 
-let minutes =
+let m =
 now.getMinutes().toString().padStart(2,'0');
 
 document.getElementById("clock").innerText =
-`${hours}:${minutes}`;
-
-document.getElementById("date").innerText =
-now.toLocaleDateString('fr-FR',{
-weekday:'long',
-day:'numeric',
-month:'long'
-});
+`${h}:${m}`;
 
 }
 
@@ -590,107 +556,157 @@ setInterval(updateClock,1000);
 
 updateClock();
 
-/* ================= SCROLL ================= */
+/* SCROLL */
 
-function scrollToGrid(){
+function scrollDashboard(){
 
-document
-.getElementById("dashboard")
+document.getElementById("dashboard")
 .scrollIntoView({
 behavior:'smooth'
 });
 
 }
 
-/* ================= QUOTES ================= */
+/* AI ORGANIZER */
 
-const quotes = [
+function organizeBrain(){
 
-"Small progress is still progress.",
+const input =
+document.getElementById("brainInput").value;
 
-"Discipline beats motivation.",
+const output =
+document.getElementById("brainOutput");
 
-"Focus on becoming, not proving.",
+if(input.trim()===""){
 
-"Dreams require consistency.",
+output.innerText =
+"Ajoute des pensées ou tâches.";
 
-"Your future self is watching."
+return;
 
-];
+}
 
-setInterval(()=>{
+const lines =
+input.split("\n");
 
-const random =
-quotes[Math.floor(Math.random()*quotes.length)];
+let organized =
+"📌 PRIORITÉS :\n\n";
 
-document.getElementById("quote").innerText =
-`"${random}"`;
+lines.forEach((line,index)=>{
 
-},6000);
+if(line.trim()!==""){
 
-/* ================= TASKS ================= */
+organized +=
+`${index+1}. ${line.trim()}\n`;
 
-const todoList =
-document.getElementById("todoList");
+}
 
-const tasksCount =
-document.getElementById("tasksCount");
+});
+
+organized +=
+"\n⚡ Conseil IA :\nCommence par la tâche la plus difficile.";
+
+output.innerText =
+organized;
+
+}
+
+/* SUMMARY */
+
+function summarizeText(){
+
+const input =
+document.getElementById("summaryInput").value;
+
+const output =
+document.getElementById("summaryOutput");
+
+if(input.trim()===""){
+
+output.innerText =
+"Ajoute du texte.";
+
+return;
+
+}
+
+const words =
+input.split(" ");
+
+const summary =
+words.slice(0,40).join(" ");
+
+output.innerText =
+summary + "...";
+
+}
+
+/* TASKS */
+
+const taskList =
+document.getElementById("taskList");
 
 function updateTaskCount(){
 
-tasksCount.innerText =
-todoList.children.length;
+document.getElementById("taskCount")
+.innerText =
+taskList.children.length;
 
 }
 
 function addTask(){
 
 const input =
-document.getElementById("todoInput");
+document.getElementById("taskInput");
 
 if(input.value.trim()==="") return;
 
-const li =
-document.createElement("li");
+const task =
+document.createElement("div");
 
-li.innerHTML = `
+task.className = "task";
+
+task.innerHTML = `
 <span>${input.value}</span>
-<span class="delete" onclick="deleteTask(this)">❌</span>
+<span class="delete"
+onclick="deleteTask(this)">
+❌
+</span>
 `;
 
-todoList.appendChild(li);
+taskList.appendChild(task);
 
 input.value = "";
 
-updateTaskCount();
-
 saveTasks();
+
+updateTaskCount();
 
 }
 
-function deleteTask(element){
+function deleteTask(el){
 
-element.parentElement.remove();
-
-updateTaskCount();
+el.parentElement.remove();
 
 saveTasks();
+
+updateTaskCount();
 
 }
 
 function saveTasks(){
 
 localStorage.setItem(
-"tasks",
-todoList.innerHTML
+"lucidTasks",
+taskList.innerHTML
 );
 
 }
 
 function loadTasks(){
 
-todoList.innerHTML =
-localStorage.getItem("tasks") || "";
+taskList.innerHTML =
+localStorage.getItem("lucidTasks") || "";
 
 updateTaskCount();
 
@@ -698,67 +714,65 @@ updateTaskCount();
 
 loadTasks();
 
-/* ================= NOTES ================= */
+/* NOTES */
 
 const notes =
 document.getElementById("notes");
 
 notes.value =
-localStorage.getItem("notes") || "";
+localStorage.getItem("lucidNotes") || "";
 
 notes.addEventListener("input",()=>{
 
 localStorage.setItem(
-"notes",
+"lucidNotes",
 notes.value
 );
 
 });
 
-/* ================= TIMER ================= */
+/* TIMER */
 
 let time = 1500;
-let timerInterval = null;
-
-const timerDisplay =
-document.getElementById("timer");
-
-const focusCount =
-document.getElementById("focusCount");
+let interval = null;
 
 function updateTimer(){
 
-let minutes =
-Math.floor(time / 60);
+let min =
+Math.floor(time/60);
 
-let seconds =
-time % 60;
+let sec =
+time%60;
 
-timerDisplay.innerText =
-`${minutes.toString().padStart(2,'0')}:${seconds.toString().padStart(2,'0')}`;
+document.getElementById("timer").innerText =
+`${min.toString().padStart(2,'0')}:${sec.toString().padStart(2,'0')}`;
 
 }
 
 function startTimer(){
 
-if(timerInterval) return;
+if(interval) return;
 
-timerInterval = setInterval(()=>{
+interval = setInterval(()=>{
 
 time--;
 
 updateTimer();
 
-if(time <= 0){
+if(time<=0){
 
-clearInterval(timerInterval);
+clearInterval(interval);
 
-timerInterval = null;
+interval = null;
 
 alert("Session terminée 🔥");
 
-focusCount.innerText =
-parseInt(focusCount.innerText)+1;
+document.getElementById("focusCount")
+.innerText =
+parseInt(
+document.getElementById("focusCount")
+.innerText
+)+1;
 
 time = 1500;
 
@@ -772,17 +786,17 @@ updateTimer();
 
 function pauseTimer(){
 
-clearInterval(timerInterval);
+clearInterval(interval);
 
-timerInterval = null;
+interval = null;
 
 }
 
 function resetTimer(){
 
-clearInterval(timerInterval);
+clearInterval(interval);
 
-timerInterval = null;
+interval = null;
 
 time = 1500;
 
@@ -791,37 +805,6 @@ updateTimer();
 }
 
 updateTimer();
-
-/* ================= MUSIC ================= */
-
-const rain =
-document.getElementById("rain");
-
-const lofi =
-document.getElementById("lofi");
-
-const cafe =
-document.getElementById("cafe");
-
-function playSound(sound){
-
-stopSounds();
-
-sound.play();
-
-}
-
-function stopSounds(){
-
-[rain,lofi,cafe].forEach(audio=>{
-
-audio.pause();
-
-audio.currentTime = 0;
-
-});
-
-}
 
 </script>
 
